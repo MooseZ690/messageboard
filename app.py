@@ -3,7 +3,6 @@ import logging
 import sqlite3
 DATABASE = 'database.db'
 
-# initialize app
 app = Flask(__name__)
 
 def get_db():
