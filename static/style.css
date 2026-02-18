@@ -1,0 +1,36 @@
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: sans-serif;
+}
+
+body{
+    background-color: rgba(235, 235, 210, 1);
+}
+
+.two-column{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    margin-top: 1em;
+}
+
+.message-box{
+    background-color: rgb(29, 29, 153);
+    width: 100%;
+    padding: 1em;
+    color: white;
+}
+
+.message-box h1{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.message-box h2{
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.message-box p{
+    font-size: 1.2em;
+    font-weight: 300;
+}
