@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template
+from flask import Flask, g, render_template, request, redirect, url_for
 import logging
 import sqlite3
 DATABASE = 'database.db'
@@ -35,6 +35,26 @@ def home():
         """
     results = query_db(sql)
     return render_template("home.html", results=results)
+
+@app.route("/newpost", methods=['GET', 'POST'])
+def newpost():
+    if request.method == 'POST':
+        title = request.form.get('title', '').strip()
+        content = request.form.get('content', '').strip()
+        user = request.form.get('user', '').strip()
+
+        if title and content and user:
+            db = get_db()
+            db.execute(
+                "INSERT INTO Messages (title, content, user) VALUES (?, ?, ?)",
+                (title, content, user)
+            )
+            db.commit()
+
+        return redirect(url_for('home'))
+
+    return render_template("newpost.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
