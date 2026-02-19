@@ -51,10 +51,15 @@ def newpost():
 
         if title and content and user:
             db = get_db()
-            current_time = datetime.now().strftime("%H:%M:%S %d/%m/%Y")
+            current_time = str(datetime.now().strftime("%H:%M:%S %d/%m/%Y"))
+
+            user_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+            user_ip = user_ip.split(',')[0].strip()
+
+            time_ip = f"{current_time} (IP: {user_ip})"
             db.execute(
                 "INSERT INTO Messages (title, content, user, imageurl, time) VALUES (?, ?, ?, ?, ?)",
-                (title, content, user, imageurl, current_time)
+                (title, content, user, imageurl, time_ip)
             )
             db.commit()
 
