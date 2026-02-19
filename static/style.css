@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 body,h1,h2,h3,h4,h5,h6 {
     font-family: sans-serif;
@@ -10,20 +11,23 @@ body{
 
 .post-image{
     width:100%;
+    border-radius: 15px;
 }
 
 .two-column{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3em;
-    margin-top: 1em;
+    margin: 2em;
 }
 
 .message-box{
-    background-color: rgb(29, 29, 153);
+    background-color: rgb(70, 70, 70);
     width: 100%;
-    padding: 1em;
+    padding: 2em;
+    padding-top: 1em;
     color: white;
+    border-radius: 20px;
 }
 
 .message-box h1{
@@ -47,12 +51,16 @@ body{
 }
 
 .center-text-container{
-    text-align: center;
+    text-align: left;
+    padding-left: 2.5em;
 }
 
 .center-text-container h1{
-    font-weight: 700;
-    font-family: "Bitcount Grid Double", sans-serif;
+    font-weight: 1000;
+    font-family: "Playfair display", sans-serif;
+    color: rgb(255, 123, 0);
+    font-size: 3.5em;
+    padding: None;
 }
 
 body,h1,h2,h3,h4,h5,h6 {
@@ -67,15 +75,42 @@ body,h1,h2,h3,h4,h5,h6 {
 }
 
 .top-row{
-    display: flex;
-    gap: 15px;
+    display: inline;
+    gap: 2em;
 }
 
 .top-input-box{
-    width: 20%;
+    width: 10%;
+    height: 2.4em;
+    padding: 0.6em;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    border-radius: 20px;
     background-color: rgb(46, 46, 46);
-    color: white;
-    border-color: rgb(90, 90, 90);
     margin-bottom: 1.5em;
 }
 
+.input-box{
+    border-radius: 20px;
+    width: 100%;
+    padding: 0.8em;
+    margin-left: 0.7em;
+    background-color: rgb(46, 46, 46);
+}
+
+.centered-content{
+    margin-top: 12em;
+    display: grid;
+    place-items: center;
+}
+
+.centered-content{
+    display: grid;
+    place-items: center;
+}
+
+.top-input-box,
+.input-box {
+    color: white;
+    border: 1px solid rgb(100, 100, 100);
+}
