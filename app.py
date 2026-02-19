@@ -1,6 +1,7 @@
 from flask import Flask, g, render_template, request, redirect, url_for
-import logging
-import sqlite3
+import logging, sqlite3, datetime
+from datetime import datetime
+
 DATABASE = 'database.db'
 
 app = Flask(__name__)
@@ -30,7 +31,8 @@ def query_db(query, args=(), one=False):
 def home():
     # home page - shows all messages committed as of present
     sql = """
-        SELECT * FROM Messages;
+        SELECT * FROM Messages
+        ORDER BY time DESC
         """
     results = query_db(sql)
     return render_template("home.html", results=results)
@@ -49,9 +51,10 @@ def newpost():
 
         if title and content and user:
             db = get_db()
+            current_time = datetime.now().strftime("%H:%M:%S %d/%m/%Y")
             db.execute(
-                "INSERT INTO Messages (title, content, user, imageurl) VALUES (?, ?, ?, ?)",
-                (title, content, user, imageurl)
+                "INSERT INTO Messages (title, content, user, imageurl, time) VALUES (?, ?, ?, ?, ?)",
+                (title, content, user, imageurl, current_time)
             )
             db.commit()
 

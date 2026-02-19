@@ -1,16 +1,21 @@
 {% extends "layout.html" %}
 {% block body %}
-        <div class="two-column">
+        <div class="home-column">
             {% for message in results %}
-                <div class="message-box">
-                    <h1>{{ message[1] }}</h1>
-                    <h2>By: {{ message[3] }}</h2>
-                    <p>{{ message[2] }}</p>
-                    {% if message[4] %}
-                        {% set img=message[4] %}
-                        <img src="{{ img }}" alt="post image" class="post-image">
-                    {% endif %}
-                </div>
+                    <div class="message-box">
+                        <div class="info-box">
+                            <h1>{{ message[1] }}</h1>
+                            <h2>By: {{ message[3] }}</h2>
+                            <p>{{ message[2] }}</p>
+                        </div>
+                        <div class="image-box">
+                            {% if message[4] %}
+                                {% set img=message[4] %}
+                                <img src="{{ img }}" alt="{{ message[1] }}" class="post-image">
+                            {% endif %}
+                            <h3>{{ message[5] }}</h3>
+                        </div>
+                    </div>
             {% endfor %}
         </div>
 {% endblock %}

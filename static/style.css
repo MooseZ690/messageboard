@@ -14,20 +14,24 @@ body{
     border-radius: 15px;
 }
 
-.two-column{
+.home-column{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3em;
-    margin: 2em;
+    place-items: center;
+    padding: 2.5em;
 }
 
 .message-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color: rgb(70, 70, 70);
     width: 100%;
     padding: 2em;
     padding-top: 1em;
     color: white;
     border-radius: 20px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
 }
 
 .message-box h1{
@@ -45,14 +49,19 @@ body{
     font-weight: 300;
 }
 
-.message-box img{
-    width: 50%;
-    align-self: center;
-}
-
 .center-text-container{
     text-align: left;
     padding-left: 2.5em;
+}
+
+.image-box{
+    text-align: right;
+    padding: 1em;
+    padding-right: 2em;
+}
+
+.image-box img{
+    width: 60%
 }
 
 .center-text-container h1{
@@ -69,7 +78,7 @@ body,h1,h2,h3,h4,h5,h6 {
 
 .post-container{
     background-color: rgb(70, 70, 70);
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 2em;
     width: 70%;
 }
@@ -98,6 +107,10 @@ body,h1,h2,h3,h4,h5,h6 {
     background-color: rgb(46, 46, 46);
 }
 
+.image-box h3{
+    font-size: 1em;
+}
+
 .centered-content{
     margin-top: 12em;
     display: grid;
@@ -113,4 +126,22 @@ body,h1,h2,h3,h4,h5,h6 {
 .input-box {
     color: white;
     border: 1px solid rgb(100, 100, 100);
+}
+
+.about-box{
+    width: 50%;
+    background-color: rgb(70, 70, 70);
+    border-radius: 20px;
+    padding: 2em;
+    margin: 2em;
+    margin-top: 12em;
+}
+
+.about-container{
+    display: grid;
+    place-items: center;
+}
+
+.info-box h2{
+    font-size: 1em;
 }
