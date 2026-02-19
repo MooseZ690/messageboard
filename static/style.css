@@ -91,7 +91,7 @@ body,h1,h2,h3,h4,h5,h6 {
 .top-input-box{
     width: 10%;
     height: 2.4em;
-    padding: 0.6em;
+    padding: 0.5em;
     margin-left: 0.7em;
     margin-right: 0.7em;
     border-radius: 20px;
@@ -125,7 +125,7 @@ body,h1,h2,h3,h4,h5,h6 {
 .top-input-box,
 .input-box {
     color: white;
-    border: 1px solid rgb(100, 100, 100);
+    border: None;
 }
 
 .about-box{
@@ -163,4 +163,18 @@ body,h1,h2,h3,h4,h5,h6 {
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     z-index: 1000;
+}
+
+.post-button{
+    background-color: rgb(46, 46, 46);
+    border: 0.1em solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    margin-left: 0.7em;
+    margin-bottom: 0.7em;
+    color: rgb(100, 100, 100);
+    margin-top: 1em;
+}
+
+.post-button:hover{
+    color: rgb(176, 176, 176)
 }
