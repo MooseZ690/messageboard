@@ -35,18 +35,23 @@ def home():
     results = query_db(sql)
     return render_template("home.html", results=results)
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/newpost", methods=['GET', 'POST'])
 def newpost():
     if request.method == 'POST':
         title = request.form.get('title', '').strip()
         content = request.form.get('content', '').strip()
         user = request.form.get('user', '').strip()
+        imageurl = request.form.get('imageurl', '').strip()
 
         if title and content and user:
             db = get_db()
             db.execute(
-                "INSERT INTO Messages (title, content, user) VALUES (?, ?, ?)",
-                (title, content, user)
+                "INSERT INTO Messages (title, content, user, imageurl) VALUES (?, ?, ?, ?)",
+                (title, content, user, imageurl)
             )
             db.commit()
 
