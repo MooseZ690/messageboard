@@ -22,7 +22,7 @@ body{
 
 .message-box{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     background-color: rgb(70, 70, 70);
     width: 100%;
     padding: 2em;
@@ -61,7 +61,7 @@ body{
 }
 
 .image-box img{
-    width: 60%
+    width: 100%
 }
 
 .center-text-container h1{
@@ -165,16 +165,26 @@ body,h1,h2,h3,h4,h5,h6 {
     z-index: 1000;
 }
 
-.post-button{
+.post-button-right{
+    width: 10%;
+    height: 2.4em;
+    padding: 0.5em;
+    margin-left: 50%;
+    margin-right: 0em;
+    border-radius: 20px;
     background-color: rgb(46, 46, 46);
-    border: 0.1em solid rgba(255, 255, 255, 0);
-    border-radius: 5px;
-    margin-left: 0.7em;
-    margin-bottom: 0.7em;
+    margin-bottom: 1.5em;
+    border: 0.1em solid rgba(176, 176, 176);
     color: rgb(100, 100, 100);
-    margin-top: 1em;
 }
 
-.post-button:hover{
-    color: rgb(176, 176, 176)
+.post-button-right:hover{
+    color: rgb(46, 46, 46);
+    background-color: white;
+}
+
+.post-button-container{
+    text-align: right;
+    height: 2.4em;
+    padding: None;
 }
